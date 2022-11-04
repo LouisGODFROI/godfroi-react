@@ -3,11 +3,35 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import { ComposantPokemon } from './composants/pokemonComposant';
+import { HomePages } from './pages/HomePage';
+import { ComposantPrismillon } from './composants/prismillonComposant';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePages/>,
+  },
+  {
+    path: "/pokedex",
+    element: <ComposantPokemon/>,
+  },
+  {
+    path: "/prismillon",
+    element: <ComposantPrismillon/>,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
