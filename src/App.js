@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 //import './composants/pokemonComposant';
-import { ComposantPokemon } from './composants/pokemonComposant';
+import { ComposantPokemon } from './pages/pokedexPage';
 
 function App() {
   return (

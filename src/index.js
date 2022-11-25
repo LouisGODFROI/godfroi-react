@@ -8,9 +8,9 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import { ComposantPokemon } from './composants/pokemonComposant';
+import { ComposantPokemon } from './pages/pokedexPage';
 import { HomePages } from './pages/HomePage';
-import { ComposantPrismillon } from './composants/prismillonComposant';
+import { ComposantPrismillon } from './pages/prismillonPage';
 
 
 const router = createBrowserRouter([
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <HomePages/>,
   },
   {
-    path: "/pokedex",
+    path: "/pokedex/:offset",
     element: <ComposantPokemon/>,
   },
   {
