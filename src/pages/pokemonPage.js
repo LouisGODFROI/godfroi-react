@@ -5,9 +5,8 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import App from "../App";
-import Counter from "../composants/Counter";
-import History from "../composants/History";
 import reducers from "../reducers";
+import { BookMarkComposant } from "../composants/BookMarkComposant";
 export function PokemonPage() {
     const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/`;
     const urlFin = '.png';
@@ -44,8 +43,7 @@ return (
                   Pokemon Favoris 
               </Typography>
               <div>
-                  <Counter />
-                  <History />
+                  <BookMarkComposant />
               </div>
               </div>
             </Provider>
