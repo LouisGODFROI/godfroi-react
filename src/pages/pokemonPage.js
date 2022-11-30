@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { NavbarPoke } from "../composants/NavbarPoke";
 import {Grid, Container, Typography, Button} from '@mui/material/';
-import { PrismillonBox } from "../composants/PrismillonBox";
-
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import App from "../App";
+import Counter from "../composants/Counter";
+import History from "../composants/History";
+import reducers from "../reducers";
 export function PokemonPage() {
-    const [tab, setData] = useState([0]);
-    const [tabImg, setDataImg] = useState([0]);
     const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/`;
     const urlFin = '.png';
     var urlcourante = document.location.href;
@@ -15,11 +18,6 @@ export function PokemonPage() {
     let urlComplet = url + num + urlFin;
 
   useEffect(() => {
-    let i = 0;
-    let tabTemporaire = [];
-    let nom = [];
-    let tabImgTemp = [];
-    
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
     .then((response) => response.json())
@@ -40,6 +38,17 @@ return (
                 <Typography fontFamily= "Raleway" variant="h5">Voici l'official art work du pokemon : </Typography>
                 <img id="img" src={urlComplet}></img>
             </div>
+            <Provider store={createStore(reducers)}>
+              <div>
+              <Typography fontFamily= "Raleway" variant="h5">
+                  Pokemon Favoris 
+              </Typography>
+              <div>
+                  <Counter />
+                  <History />
+              </div>
+              </div>
+            </Provider>
             <Button variant="contained" color="success" href={'/'}> Retour au menu principal</Button>
             &#160;&#160;&#160;&#160;&#160;
             <Button variant="contained" color="success" href={`/pokedex/${parseInt(parseInt((num-1)/20)*20)}`}> Retour au pokedex</Button>
@@ -50,3 +59,5 @@ return (
       
   )
 }
+
+render(<App />, document.getElementById("root"));

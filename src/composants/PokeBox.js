@@ -10,9 +10,10 @@ export function PokeBox({tabType, i, offset, name, tabImage}) {
               },
             }}>
               <a style={{ 
-            color: '#000', 
+            color: '#FFFF', 
             textDecoration: 'none', 
             verticalAlign: 'middle', 
+            fontFamily: "Raleway"
             }}
             href={`../pokemon/${i+1+offset}`}>
                 <center>
