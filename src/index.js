@@ -11,6 +11,7 @@ import {
 import { ComposantPokemon } from './pages/pokedexPage';
 import { HomePages } from './pages/HomePage';
 import { ComposantPrismillon } from './pages/prismillonPage';
+import { PokemonPage } from './pages/pokemonPage';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/pokedex/:offset",
     element: <ComposantPokemon/>,
+  },
+  {
+    path: "/pokemon/:offset",
+    element: <PokemonPage/>,
   },
   {
     path: "/prismillon",
