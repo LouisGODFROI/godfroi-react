@@ -1,28 +1,35 @@
-import {Button, Container, Typography} from '@mui/material/';
-
-import { cloneElement } from "react"
-import App from "../App"
+import {Button, Container} from '@mui/material/';
 import { NavbarPoke } from '../composants/NavbarPoke';
-import { ComposantPokemon } from "./pokedexPage"
-import React, { PureComponent } from "react";
-import { render } from "react-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import ListeDeFavoris from '../composants/FavorisComposant';
 
 export function HomePages() {
+    const navigate = useNavigate();
+
+    const handlePokedex = () => {
+        navigate(`pokedex`);
+    };
+
+    const handlePrismillon = () => {
+        navigate(`prismillon`);
+    };
     return(
-        <div>
+        <div className='backgroundHome'>
             <Container fixed>
                 <NavbarPoke h3={"Bienvenue dans le monde de pokemon"}></NavbarPoke> <br/>
                 <center>
                     <nav>
-                        <Button variant="contained" color="success" href={'pokedex/0'}>Pokedex</Button> <br/><br/>
-                        <Button variant="contained" color="success" href={'prismillon'}>Prismillon</Button>
+                        <Button variant="contained" color="success" onClick={handlePokedex}>Pokedex</Button> <br/><br/>
+                        <Button variant="contained" color="success" onClick={handlePrismillon}>Prismillon</Button>
                     </nav>
                     <br/><br/>
+                    <div>
+                        <ListeDeFavoris/>
+                    </div>
                 </center>
             </Container>
         </div>
     )
 }
-
-render(<App />, document.getElementById("root"));
 

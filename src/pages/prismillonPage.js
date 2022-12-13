@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavbarPoke } from "../composants/NavbarPoke";
 import {Grid, Container, Typography, Button} from '@mui/material/';
 import { PrismillonBox } from "../composants/PrismillonBox";
+import { useNavigate } from "react-router-dom";
 
 export function ComposantPrismillon() {
   const [tab, setData] = useState([0]);
@@ -9,6 +10,7 @@ export function ComposantPrismillon() {
   const h3 = "Ici, vous retrouvez toutes les formes du pokemon"
   const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666`;
   const urlFin = '.png';
+  const navigate = useNavigate();
 
   useEffect(() => {
     let i = 0;
@@ -34,9 +36,14 @@ export function ComposantPrismillon() {
       console.log(tabTemporaire);
     });
     
-  }, []);
+  },   []);
+
+  const handleHome = () => {
+    navigate(`/`);
+  };
+
   return ( 
-  <div>
+  <div className="backgroundHome">
       <Container fixed>
         <NavbarPoke id={"nomPokemon"} h3={h3}></NavbarPoke>
         <center>
@@ -49,11 +56,12 @@ export function ComposantPrismillon() {
               {tab.map((name, i)=> (
                 <PrismillonBox name={name} i={i} tabImage={tabImg}></PrismillonBox>
               ))}
-            </Grid>
+            </Grid><br/>
+            <Button variant="contained" color="success" onClick={handleHome}> Retour au menu principal</Button> 
             </center>
         </center>
       </Container>
-      <Button variant="contained" color="success" href={'/'}> Retour au menu principal</Button>
+     
     </div>
     
 )
