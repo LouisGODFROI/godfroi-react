@@ -9,7 +9,7 @@ const FavorisComposant = () => {
   if (store.length === 0) {
     return (
       <>
-        <Typography fontFamily= "Raleway" variant="h5" color='#4B0082'> Il n'y a pour le moment pas de favoris </Typography>
+        <Typography fontFamily= "Raleway" variant="h5" color='white'> Il n'y a pour le moment pas de favoris </Typography>
       </>
     );
   } else {
