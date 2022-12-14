@@ -48,7 +48,7 @@ export function PokeBox({i, name, checked}) {
         switch(type) {
           case 'grass' :
             color = '#4caf50'
-            logo = '../assets/logo/Plante.png'
+            logo = 'assets/logo/Plante.png'
             break;
           case 'normal' : 
             color = '#9e9e9e'
