@@ -170,8 +170,9 @@ export function PokeBox({i, name, checked}) {
                     {isFav ? <StarIcon /> : <StarBorderIcon />}
                   </IconButton>
                   
-                }>
+                }> 
                 </CardHeader>
+                
               <a style={{ 
                 color: '#FFFF', 
                 textDecoration: 'none', 
@@ -180,8 +181,8 @@ export function PokeBox({i, name, checked}) {
                 }}>
                 <center>
                   <div key={i} onClick={handleClick}>
-                    <img src={img}></img><p>{id} : {name} </p>
-                    <img src={imgbg}></img>
+                    <img src={img}></img><p>{id} : {name} <img src={imgbg} width='50'/></p>
+                    
                   </div>
                 </center>
               </a>
