@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-//import './composants/pokemonComposant';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePages } from './pages/HomePage';
 import { ComposantPrismillon } from './pages/prismillonPage';
-import { PokemonPage } from './pages/pokemonPage';
+import { PokemonPage } from './pages/PokemonPage';
 import { Provider } from "react-redux";
 import {store} from "./store"
 import { PagePokedex } from './pages/PagePokedex';

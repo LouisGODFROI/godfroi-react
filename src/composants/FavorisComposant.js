@@ -1,32 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Grid } from "@mui/material";
+import { Typography, Grid } from '@mui/material/';
+import { PokeBox } from "./PokeBox";
 
-const ListeDeFavoris = () => {
-  const cards = useSelector((state) => state.PageFavoris);
+const FavorisComposant = () => {
+  const store = useSelector((state) => state.pokemonFav);
 
-  if (cards.length === 0) {
+  if (store.length === 0) {
     return (
       <>
-        <h3> Il n'y a pour le moment pas de favoris </h3>
+        <Typography fontFamily= "Raleway" variant="h5" color='#4B0082'> Il n'y a pour le moment pas de favoris </Typography>
       </>
     );
   } else {
     return (
       <>
-        <Grid
-          container
-          rowSpacing={1}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          margin="2%"
-        >
-          {cards.map((card, index) => (
-            <React.Fragment key={index}>
-              <Grid item xs={3}>
-                <div>{card.name}</div>
-                  
-              </Grid>
-            </React.Fragment>
+        <Grid container spacing={2} rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {store.map((card) => (
+            <PokeBox name={card.name} ></PokeBox>
           ))}
         </Grid>
       </>
@@ -34,4 +25,4 @@ const ListeDeFavoris = () => {
   }
 };
 
-export default ListeDeFavoris;
+export default FavorisComposant;

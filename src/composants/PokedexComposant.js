@@ -5,7 +5,7 @@ import { NavbarPoke } from "./NavbarPoke";
 import { useNavigate } from "react-router-dom";
 
 
-export function ComposantPokemon() {
+export function PokedexComposant() {
   const [tab, setData] = useState([0]);
   const [pageSuivante, setPageSuivante] = useState();
   const [pagePrecedente, setPagePrecedente] = useState([0]);
@@ -62,6 +62,7 @@ export function ComposantPokemon() {
 
             <div>
             <br/>
+            <div spacing={2}>
               <Button variant="contained" color="success" onClick={() => fetchPokemon(`${pagePrecedente}`)}> 
                 {"<< précédent"}   
               </Button>
@@ -69,7 +70,7 @@ export function ComposantPokemon() {
               <Button variant="contained" color="success" onClick={() => fetchPokemon(`${pageSuivante}`)}> 
                 {"suivant >>"}
               </Button>
-              <div><br/></div>
+              </div>
             </div>
           </center>
         </div>

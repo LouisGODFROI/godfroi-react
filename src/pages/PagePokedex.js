@@ -1,10 +1,10 @@
-import { ComposantPokemon } from "../composants/ComposantPokemon";
+import { PokedexComposant } from "../composants/PokedexComposant";
 
 
 export function PagePokedex(){
     return  (
         <div>
-            <ComposantPokemon />
+            <PokedexComposant />
         </div>
     )
 }   

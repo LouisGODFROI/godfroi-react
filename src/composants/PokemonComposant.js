@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { NavbarPoke } from "../composants/NavbarPoke";
 import { Container, Typography, Button} from '@mui/material/';
 import { useNavigate } from "react-router-dom";
-export function PokemonPage() {
+export function PokemonComposant() {
     const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/`;
     const urlFin = '.png';
     var urlcourante = document.location.href;
@@ -35,24 +34,25 @@ export function PokemonPage() {
   };
   
 return ( 
+  
     <div className="backgroundPoke">
+      
+      <Button variant="contained" color="success" onClick={handleHome}> Retour au menu principal</Button>
         <Container fixed>
         <center>
-          <NavbarPoke id={"nomPokemon"}></NavbarPoke>
+          <Typography color="#ffffff" fontFamily= "Raleway" variant="h1" id={"nomPokemon"}></Typography>
+        </center>
+        <center>
+          <div>
+              <Typography color="#ffffff" fontFamily= "Raleway" variant="h5">Voici l'official art work du pokemon : </Typography>
+              <img id="img" src={urlComplet}></img>
+          </div>
+          <Button variant="contained" color="success" onClick={handleRetour}> Retour au pokedex</Button>
+        </center>   
+            
+            
+            
           
-            <div>
-                <Typography color="#ffffff" fontFamily= "Raleway" variant="h5">Voici l'official art work du pokemon : </Typography>
-                <img id="img" src={urlComplet}></img>
-            </div>
-              <div>
-              <Typography fontFamily= "Raleway" variant="h5" color="#ffffff">
-                  Pokemon Favoris 
-              </Typography>
-              </div>
-            <Button variant="contained" color="success" onClick={handleHome}> Retour au menu principal</Button>
-            &#160;&#160;&#160;&#160;&#160;
-            <Button variant="contained" color="success" onClick={handleRetour}> Retour au pokedex</Button>
-          </center>
         </Container>
         
       </div>

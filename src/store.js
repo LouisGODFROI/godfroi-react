@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-const pageFavorisSlice = createSlice({
-  name: "PageFavoris",
+const pageFavoris = createSlice({
+  name: "pokemonFav",
   initialState: [],
   reducers: {
     addCard: (state, action) => {
@@ -17,10 +17,10 @@ const pageFavorisSlice = createSlice({
   },
 });
 
-export const { addCard, removeCard } = pageFavorisSlice.actions;
+export const { addCard, removeCard } = pageFavoris.actions;
 
-const filterResult = createSlice({
-  name: "filters",
+const filtre = createSlice({
+  name: "filtres",
   initialState: [""],
   reducers: {
     addFilter: (state, action) => {
@@ -29,11 +29,11 @@ const filterResult = createSlice({
   },
 });
 
-export const { addFilter } = filterResult.actions;
+export const { addFilter } = filtre.actions;
 
 export const store = configureStore({
   reducer: {
-    PageFavoris: pageFavorisSlice.reducer,
-    filters: filterResult.reducer,
+    pokemonFav: pageFavoris.reducer,
+    filtres: filtre.reducer,
   },
 });
