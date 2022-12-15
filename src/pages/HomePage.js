@@ -20,7 +20,7 @@ export function HomePages() {
                 <NavbarPoke h3={"Bienvenue dans le monde de pokemon"}></NavbarPoke> <br/>
                 <center>
                 <Typography fontFamily= "Raleway" variant="h4" color='white'>Vous pouvez cliquer sur les images afin d'accéder aux pages du site </Typography> <br/>
-                    <Grid container>
+                    <Grid container columnSpacing={-30}>
                         <Typography fontFamily= "Raleway" variant="h5" color='white'>Le pokedex : </Typography>
                         <Button variant="text" color="success" onClick={handlePokedex}> <img src="../assets/img/pokedex.png" width='250'></img></Button> 
                         <Typography fontFamily= "Raleway" variant="h5" color='white'>Prismillon : </Typography>
