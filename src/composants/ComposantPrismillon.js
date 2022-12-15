@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { NavbarPoke } from "../composants/NavbarPoke";
+import { NavbarPoke } from "./NavbarPoke";
 import {Grid, Container, Typography, Button} from '@mui/material/';
-import { PrismillonBox } from "../composants/PrismillonBox";
+import { PrismillonBox } from "./PrismillonBox";
 import { useNavigate } from "react-router-dom";
 
 export function ComposantPrismillon() {
@@ -13,7 +13,7 @@ export function ComposantPrismillon() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let i = 0;
+
     let tabTemporaire = [];
     let nom = [];
     let tabImgTemp = [];
@@ -26,7 +26,6 @@ export function ComposantPrismillon() {
       
       document.querySelector("#nomPokemon").innerHTML = data.name
       data.forms.forEach(element => {
-        i += 1
         tabTemporaire.push(element.name)
         nom = element.name.substr(8)
         tabImgTemp.push(url + nom + urlFin)

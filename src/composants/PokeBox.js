@@ -1,4 +1,4 @@
-import {Grid, Card, IconButton, CardHeader} from '@mui/material/';
+import {Grid, Card, IconButton, CardHeader, Typography} from '@mui/material/';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useDispatch, useSelector } from "react-redux";
@@ -165,6 +165,7 @@ export function PokeBox({i, name, checked}) {
                 backgroundColor: 'primary.main',
                 opacity: [1, 1, 0.95],
               }}}>
+               
                 <CardHeader action={ 
                   <IconButton onClick={handleFavori}>
                     {isFav ? <StarIcon /> : <StarBorderIcon />}
@@ -172,19 +173,21 @@ export function PokeBox({i, name, checked}) {
                   
                 }> 
                 </CardHeader>
-                
               <a style={{ 
                 color: '#FFFF', 
                 textDecoration: 'none', 
                 verticalAlign: 'middle', 
                 fontFamily: "Raleway"
                 }}>
-                <center>
                   <div key={i} onClick={handleClick}>
-                    <img src={img}></img><p>{id} : {name} <img src={imgbg} width='50'/></p>
-                    
+                    <div><Typography fontFamily= "Raleway" variant="h6" color='white'>{id} : {name} </Typography></div>
+                    <img src={img}></img>
+                    <div align="right"><img src={imgbg} width='50'/></div>
                   </div>
-                </center>
+                  
+                
+                
+                
               </a>
             </Card>
           </Grid>

@@ -2,7 +2,7 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePages } from './pages/HomePage';
-import { ComposantPrismillon } from './pages/prismillonPage';
+import { PagePrismillon } from './pages/PagePrismillon';
 import { PokemonPage } from './pages/PokemonPage';
 import { Provider } from "react-redux";
 import {store} from "./store"
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<HomePages />} />
           <Route path="/pokedex" element={<PagePokedex />} />
           <Route path="/pokemon/:offset" element={<PokemonPage />}/>
-          <Route path="/prismillon" element={<ComposantPrismillon />} />
+          <Route path="/prismillon" element={<PagePrismillon />} />
         </Routes>
       </BrowserRouter>
     </Provider>
@@ -25,3 +25,4 @@ function App() {
 }
 
 export default App;
+

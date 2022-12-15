@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import {Grid, Container, Button} from '@mui/material/';
+import {Grid, Container, Button, Typography} from '@mui/material/';
 import { PokeBox } from "./PokeBox";
-import { NavbarPoke } from "./NavbarPoke";
 import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 export function PokedexComposant() {
   const [tab, setData] = useState([0]);
   const [pageSuivante, setPageSuivante] = useState();
   const [pagePrecedente, setPagePrecedente] = useState([0]);
-  let limit = 20;
+  const limit = 20;
   const h1 = 'Le Pokedex';
   const h2 = 'Ici, vous retrouvez la liste des Pokemon';
   const navigate = useNavigate();
@@ -24,9 +25,6 @@ export function PokedexComposant() {
 
   let fetchPokemon = (urlPage) => { 
     let tabTemporaire = [];
-    let i = 0;
-    let offset = 0;
-    offset = parseInt(offset);
 
     fetch(urlPage)
       .then((response) => response.json())
@@ -34,9 +32,7 @@ export function PokedexComposant() {
         console.log(data)
         let urlSuivant = data.next
         console.log(urlSuivant)
-        i += offset
         data.results.forEach(element => {
-          i += 1
           tabTemporaire.push(element)
         });
         setData(tabTemporaire);
@@ -48,12 +44,13 @@ export function PokedexComposant() {
 
 
   return ( 
-    <div className="image">
+    <div>
+      <Button variant="contained" color="success" onClick={handleHome}> Retour au menu principal</Button>
       <Container fixed>
         <div>
           <center>
-            <NavbarPoke h1={h1} h3={h2}></NavbarPoke>
-              
+          <Typography color="#ffffff" fontFamily= "Raleway" variant="h1"> {h1}</Typography>
+          <Typography color="#ffffff" fontFamily= "Raleway" variant="h3"> {h2}</Typography>  
                 <Grid container spacing={2} rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                   {tab.map((element, i)=> (
                     <PokeBox name={element.name} i={i} isChecked={false}></PokeBox>
@@ -64,13 +61,13 @@ export function PokedexComposant() {
             <br/>
             <div spacing={2}>
               <Button variant="contained" color="success" onClick={() => fetchPokemon(`${pagePrecedente}`)}> 
-                {"<< précédent"}   
+                <ArrowBackIcon/> précédent  
               </Button>
-              <Button variant="contained" color="success" onClick={handleHome}> Retour au menu principal</Button>
+              
               <Button variant="contained" color="success" onClick={() => fetchPokemon(`${pageSuivante}`)}> 
-                {"suivant >>"}
+                suivant <ArrowForwardIcon/>
               </Button>
-              </div>
+              </div> <br/>
             </div>
           </center>
         </div>

@@ -22,9 +22,9 @@ export function HomePages() {
                 <Typography fontFamily= "Raleway" variant="h4" color='white'>Vous pouvez cliquer sur les images afin d'accéder aux pages du site </Typography> <br/>
                     <Grid container columnSpacing={-30}>
                         <Typography fontFamily= "Raleway" variant="h5" color='white'>Le pokedex : </Typography>
-                        <Button variant="text" color="success" onClick={handlePokedex}> <img src="../assets/img/pokedex.png" width='250'></img></Button> 
+                        <Button variant="text" color="success" onClick={handlePokedex}> <img src="../assets/img/pokedex.png" width='250' alt="pokedex"></img></Button> 
                         <Typography fontFamily= "Raleway" variant="h5" color='white'>Prismillon : </Typography>
-                        <Button variant="text" color="success" onClick={handlePrismillon}> <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/666.png' width='300'></img></Button>
+                        <Button variant="text" color="success" onClick={handlePrismillon}> <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/666.png' alt="prismillon" width='300'></img></Button>
                     </Grid>
                         
                     <br/><br/>
