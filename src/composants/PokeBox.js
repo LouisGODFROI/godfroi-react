@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export function PokeBox({i, name, checked}) {
   const navigate = useNavigate();
-  const [isChecked, setIsChecked] = useState(checked);
+  const [Checked, setChecked] = useState(checked);
   const [isFav, setIsFav] = useState();
   const [img, setImg] = useState();
   const [type, setDataType] = useState();
@@ -24,9 +24,9 @@ export function PokeBox({i, name, checked}) {
   useEffect(() => {
   let include = pageFavorisState.find((card) => card.name === name);
       if (include) {
-        setIsChecked(true);
+        setChecked(true);
       }
-      if (!!isChecked) {
+      if (!!Checked) {
         setIsFav(true);
       } else {
         setIsFav(false);
@@ -137,13 +137,13 @@ export function PokeBox({i, name, checked}) {
     };
   
     const handleFavori = (event) => {
-      if (!isChecked) {
-        setIsChecked(true);
+      if (!Checked) {
+        setChecked(true);
         dispatch(
           addCard({
             id: i,
             name: name,
-            isChecked: true,
+            Checked: true,
           })
         );
         console.log("ajouté aux favoris");
@@ -151,7 +151,7 @@ export function PokeBox({i, name, checked}) {
         if (event.target.baseURI.includes("HomePage")) {
           dispatch(removeCard(name));
         } else {
-          setIsChecked(false);
+          setChecked(false);
           dispatch(removeCard(name));
           console.log("suprimé des favoris");
         }
@@ -178,11 +178,11 @@ export function PokeBox({i, name, checked}) {
                 textDecoration: 'none', 
                 verticalAlign: 'middle', 
                 fontFamily: "Raleway"
-                }}>
-                  <div key={i} onClick={handleClick}>
+                }} onClick={handleClick}>
+                  <div key={i}>
                     <div><Typography fontFamily= "Raleway" variant="h6" color='white'>{id} : {name} </Typography></div>
-                    <img src={img}></img>
-                    <div align="right"><img src={imgbg} width='50'/></div>
+                    <img src={img} alt="pokemon"></img>
+                    <div align="right"><img src={imgbg} width='50' alt="type"/></div>
                   </div>
                   
                 

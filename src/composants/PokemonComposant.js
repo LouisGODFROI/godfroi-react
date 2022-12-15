@@ -23,7 +23,7 @@ export function PokemonComposant() {
     });
 
     
-}, []);
+}, );
 
   const handleRetour = () => {
     navigate(`/pokedex`);
@@ -32,6 +32,7 @@ export function PokemonComposant() {
   const handleHome = () => {
     navigate(`/`);
   };
+  document.body.style.backgroundImage = `url("/assets/img/oui.jpg")`
   
 return ( 
   
@@ -45,7 +46,7 @@ return (
         <center>
           <div>
               <Typography color="#ffffff" fontFamily= "Raleway" variant="h5">Voici l'official art work du pokemon : </Typography>
-              <img id="img" src={urlComplet}></img>
+              <img id="img" alt="pokemon voulu" src={urlComplet}></img>
           </div>
           <Button variant="contained" color="success" onClick={handleRetour}> Retour au pokedex</Button>
         </center>   

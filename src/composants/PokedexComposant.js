@@ -42,6 +42,7 @@ export function PokedexComposant() {
       });
     }
 
+    document.body.style.backgroundImage = `url("/assets/img/cave.jpg")`
 
   return ( 
     <div>
@@ -59,7 +60,7 @@ export function PokedexComposant() {
 
             <div>
             <br/>
-            <div spacing={2}>
+            <div spacing={30}>
               <Button variant="contained" color="success" onClick={() => fetchPokemon(`${pagePrecedente}`)}> 
                 <ArrowBackIcon/> précédent  
               </Button>

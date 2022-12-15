@@ -14,8 +14,13 @@ export function HomePages() {
     const handlePrismillon = () => {
         navigate(`prismillon`);
     };
+
+    document.body.style.backgroundImage = `url("/assets/img/cave.jpg")`
+    document.body.style.backgroundSize = "100%"; 
+    document.body.style.backgroundAttachment = "fixed";
+
     return(
-        <div className='backgroundHome'>
+        <div>
             <Container fixed>
                 <NavbarPoke h3={"Bienvenue dans le monde de pokemon"}></NavbarPoke> <br/>
                 <center>

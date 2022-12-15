@@ -35,18 +35,20 @@ export function ComposantPrismillon() {
       console.log(tabTemporaire);
     });
     
-  },   []);
+  },   );
 
   const handleHome = () => {
     navigate(`/`);
   };
+
+  document.body.style.backgroundImage = `url("/assets/img/cave.jpg")`
 
   return ( 
   <div className="backgroundHome">
       <Container fixed>
         <NavbarPoke id={"nomPokemon"} h3={h3}></NavbarPoke>
         <center>
-          <img id="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/666.png"></img>
+          <img id="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/666.png" alt="Prismillon"></img>
           <div>
             <Typography fontFamily= "Raleway" variant="h5">Voici la liste des différentes formes de prismillon :</Typography>
           </div>  
